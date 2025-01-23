@@ -1,0 +1,168 @@
+ /* Button styling */
+ .back-to-top {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: #3498db; /* Professional blue */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+  }
+
+  /* Button hover effect */
+  .back-to-top:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    background-color: #2980b9; /* Slightly darker blue */
+  }
+
+  /* Button fade-in effect */
+  .back-to-top.show {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.8; }
+  }
+
+  @media (max-width:769px) {
+    .back-to-top {
+      width: 25px;
+      height: 25px;
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* social icon bar */
+  /* Main container */
+  .social-bar {
+    position: fixed;
+    right: 0.1%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.478);
+    border: 1px solid rgba(0, 0, 0, 0.181);
+    padding: 10px 10px;
+    border-radius: 50% /13%;
+  }
+
+  /* Social media button style */
+  .social-bar a {
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    border-radius: 20%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    /* border-radius: 8px; */
+  }
+
+  /* Individual colors for each button */
+  .social-bar a.facebook { background-color: #4267B2; }
+  .social-bar a.linkedin { background-color: #0077B5; }
+  .social-bar a.youtube { background-color: #FF0000; }
+  .social-bar a.instagram { background-color: #C13584; }
+
+  /* Hover effects */
+  .social-bar a:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+  }
+
+  /* Advanced hover animation */
+  .social-bar a:hover i {
+    animation: icon-bounce 0.3s alternate infinite;
+  }
+
+  /* Keyframes for icon animation */
+  @keyframes icon-bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* WhatsApp Button Container */
+  .whatsapp-btn {
+    text-decoration: none;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* Hover effect */
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px #25D366, 0px 0px 20px #25D366;
+  }
+
+  /* Advanced icon bounce animation */
+  .whatsapp-btn:hover i {
+    animation: bounce 0.6s infinite alternate;
+  }
+
+  /* Keyframes for bouncing animation */
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+  }

@@ -1,0 +1,252 @@
+/* Social Media Icon Bar Core Styles */
+.social-bar {
+    position: fixed;
+    right: -7px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000;
+    padding: 8px;
+    border-radius: 12px 0 0 12px;
+}
+
+/* Social Link Base Styles */
+.social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+}
+
+.social-link i {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    padding: 12px;
+    transition: transform 0.3s ease;
+}
+
+.icon-text {
+    position: absolute;
+    left: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Enhanced Social Media Gradients */
+.facebook {
+    background: linear-gradient(45deg, #1a237e, #1877f2);
+    /* box-shadow: -2px 2px 8px rgba(24, 119, 242, 0.3); */
+}
+
+.linkedin {
+    background: linear-gradient(45deg, #004d7a, #0077b5);
+    /* box-shadow: -2px 2px 8px rgba(0, 119, 181, 0.3); */
+}
+
+.youtube {
+    background: linear-gradient(45deg, #b71c1c, #ff0000);
+    /* box-shadow: -2px 2px 8px rgba(255, 0, 0, 0.3); */
+}
+
+.instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #f56040);
+    /* box-shadow: -2px 2px 8px rgba(228, 64, 95, 0.3); */
+}
+
+/* Hover Effects */
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2));
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    width: 110px;
+    transform: translateX(-5px);
+}
+
+.social-link:hover i {
+    transform: scale(1.1);
+}
+
+.social-link:hover .icon-text {
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.social-link:hover::before {
+    transform: translateX(0);
+}
+
+/* Entrance Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.social-link {
+    animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+/* Staggered Animation Delays */
+.social-link:nth-child(1) { animation-delay: 0.1s; }
+.social-link:nth-child(2) { animation-delay: 0.15s; }
+.social-link:nth-child(3) { animation-delay: 0.2s; }
+.social-link:nth-child(4) { animation-delay: 0.25s; }
+
+/* Active States */
+.social-link:active {
+    transform: translateX(-5px) scale(0.95);
+}
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-link i {
+        font-size: 18px;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 768px) {
+    .social-bar {
+        padding: 6px;
+        gap: 5px;
+        right: 0;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-link i {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .social-link:hover {
+        width: 90px;
+    }
+
+    .icon-text {
+        font-size: 11px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .social-bar {
+        top: auto;
+        bottom: 50%;
+        transform: translateY(50%);
+        right: 0;
+        flex-direction: column;
+        padding: 6px;
+        gap: 5px;
+    }
+
+    .social-link {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .social-link i {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    .icon-text {
+        display: none;
+    }
+
+    .social-link:hover {
+        width: 32px;
+        transform: translateX(-3px);
+    }
+
+    /* Mobile Animation */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .social-link {
+        animation: slideIn 0.4s ease forwards;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 320px) {
+    .social-bar {
+        padding: 4px;
+        gap: 4px;
+    }
+
+    .social-link {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-link i {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Portrait Orientation for Mobile */
+@media (max-width: 480px) and (orientation: portrait) {
+    .social-bar {
+        right: 0;
+        bottom: 50%;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 480px) and (orientation: landscape) {
+    .social-bar {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
